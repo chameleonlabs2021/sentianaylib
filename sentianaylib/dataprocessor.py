@@ -2,9 +2,6 @@ import os
 import time
 from bs4 import BeautifulSoup
 from textblob import TextBlob
-from selenium import webdriver
-from selenium.webdriver.common.keys import Keys
-from selenium.webdriver.chrome.service import Service as ChromeService
 
 
 class sentianaylib:
@@ -52,7 +49,7 @@ class sentianaylib:
         # Parse the HTML content
         soup = BeautifulSoup(html_content, 'html.parser')
 
-        search_word = keyword
+        search_word = keyword.lower()
         # Find all <a> tags with href attribute
         links = soup.find_all('a', href=True)
 
