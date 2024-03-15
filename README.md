@@ -17,7 +17,13 @@ You can install the package via pip:
 To use the package, import the `sentianaylib` class from the package and create an instance with the required driver. Then, call the `dataprocessor()` method with the URL,keyword and current_directory parameters.
 
 ```python
+from selenium import webdriver
+from selenium.webdriver.chrome.service import Service as ChromeService
+from selenium.webdriver.chrome.options import Options as ChromeOptions
+from webdriver_manager.chrome import ChromeDriverManager
 from sentianaylib import sentianaylib
+
+driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=chrome_options)
 
 current_directory = os.path.dirname(os.path.abspath(__file__))
 # Initialize sentianalib with the appropriate driver
